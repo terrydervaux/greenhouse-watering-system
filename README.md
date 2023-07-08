@@ -2,7 +2,7 @@
 
 ## Wiring
 
-![wiring](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/terrydervaux/greenhouse-watering-system/master/doc/wiring.iuml)
+![wiring](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/terrydervaux/greenhouse-watering-system/master/doc/wiring.iuml?token=GHSAT0AAAAAACDOM6BHJFFS5SKESB4Z2GXGZFJLRPQ)
 
 ## How to build and flash the firmware
 

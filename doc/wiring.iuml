@@ -1,4 +1,4 @@
-@startuml
+@startuml Greenhouse Watering System Wiring
 
 node Relay {
     () "Common End(COM)" as COM
