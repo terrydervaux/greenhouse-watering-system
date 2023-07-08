@@ -1,0 +1,22 @@
+@startuml
+
+node Relay {
+    () "Common End(COM)" as COM
+    () "Normaly Open(NO)" as NO
+}
+
+node "Power Supply" {
+    () "+" as PoP
+    () "-" as PoN
+}
+
+node "Pump"{
+    () "+" as PuP
+    () "-" as PuN
+}
+
+PoP -- NO
+COM -- PuP
+PuN -- PoN
+
+@enduml
