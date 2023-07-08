@@ -3,8 +3,7 @@
 #define PIN_LED 16
 #define PIN_RELAY 5
 
-// put function declarations here:
-int blinkLED(int);
+bool blinkLED(int);
 bool activateRelay(bool);
 
 void setup() {
@@ -18,8 +17,7 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-  int result = blinkLED(2000);
+  blinkLED(2000);
   
   activateRelay(true);
   delay(10000);
@@ -27,17 +25,14 @@ void loop() {
   delay(10000);
 }
 
-
-int blinkLED(int delayValue) {
-  
+bool blinkLED(int delayValue) {
   if(delay > 0) {
     digitalWrite(PIN_LED, HIGH);
     delay(delayValue);
     digitalWrite(PIN_LED, LOW);
-    return 0;
+    return true;
   }
-
-  return 1;
+  return false;
 }
 
 bool activateRelay(bool activate) {
@@ -45,7 +40,6 @@ bool activateRelay(bool activate) {
     digitalWrite(PIN_RELAY, HIGH);
     return true;
   }
-  
   digitalWrite(PIN_RELAY, LOW);
   return false;
 }
