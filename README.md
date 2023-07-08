@@ -2,10 +2,10 @@
 
 ## Hardware
 
-### Board: LC-Relay-ESP12-1R-MV
+### Board: LC-relais-ESP12-1R-D8
 
 - [Amazon link](https://www.amazon.fr/dp/B083QJPTVK?psc=1&ref=ppx_yo2ov_dt_b_product_details)
-- [Technical documentation](http://www.chinalctech.com/m/view.php?aid=472)
+- [Technical documentation](http://www.chinalctech.com/m/view.php?aid=479)
 
 ### Serial Connection: DSD TECH SH-U06B USB
 
