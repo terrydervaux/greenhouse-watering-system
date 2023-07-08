@@ -1,4 +1,7 @@
 #include <Arduino.h>
+#include <ESP8266WiFi.h>
+
+#include "wifi_secrets.h"
 
 #define PIN_LED 16
 #define PIN_RELAY 5
@@ -18,6 +21,16 @@ void setup() {
   // setup Relay
   pinMode(PIN_RELAY, OUTPUT);
   digitalWrite(PIN_RELAY, LOW);
+
+  // setup WiFi
+  WiFi.mode(WIFI_STA);
+  WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
+  if (WiFi.waitForConnectResult() != WL_CONNECTED) {
+      Serial.printf("WiFi Failed!\n");
+      return;
+  }
+  Serial.print("IP Address: ");
+  Serial.println(WiFi.localIP());
 }
 
 void loop() {

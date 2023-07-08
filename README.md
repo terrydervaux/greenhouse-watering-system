@@ -4,6 +4,20 @@
 
 ![wiring](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/terrydervaux/greenhouse-watering-system/master/doc/wiring.iuml)
 
+## How to build and flash the firmware
+
+1. Download VScode
+1. Install platformIO extension on VScode
+1. Clone the repository using git
+1. Create a file ``src/wifi_secrets.h`` containing
+
+    ```cpp
+    #define WIFI_SSID "your_wifi_ssid"
+    #define WIFI_PASSWORD "your_wifi_password"
+    ```
+
+1. Build and flash the firmware using PlateformIO
+
 ## Hardware
 
 ### Board: LC-relais-ESP12-1R-D8
