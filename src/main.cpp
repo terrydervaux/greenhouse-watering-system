@@ -1,14 +1,14 @@
 #include <Arduino.h>
 
-#define LED_BUILTIN 16
+#define PIN_LED 16
 
 // put function declarations here:
 int blinkLED(int);
 
 void setup() {
-  // put your setup code here, to run once:
-  pinMode(LED_BUILTIN, OUTPUT);
-  digitalWrite(LED_BUILTIN, LOW);
+  // setup LED
+  pinMode(PIN_LED, OUTPUT);
+  digitalWrite(PIN_LED, LOW);
 }
 
 void loop() {
@@ -20,9 +20,9 @@ void loop() {
 int blinkLED(int delayValue) {
   
   if(delay > 0) {
-    digitalWrite(LED_BUILTIN, HIGH);
+    digitalWrite(PIN_LED, HIGH);
     delay(delayValue);
-    digitalWrite(LED_BUILTIN, LOW);
+    digitalWrite(PIN_LED, LOW);
     return 0;
   }
 
