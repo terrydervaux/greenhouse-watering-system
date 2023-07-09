@@ -18,6 +18,32 @@
 
 1. Build and flash the firmware using PlateformIO
 
+## How to control the watering system using the API
+
+- Find the watering system IP on your internet router
+
+```bash
+export GREENHOUSE_WATERING_SYSTEM_IP="your_watering_system_ip"
+```
+
+- Retrieve current pump status
+
+```bash
+curl -vvv -X GET http://$GREENHOUSE_WATERING_SYSTEM_IP/relay
+```
+
+- Enable the pump
+
+```bash
+curl -X POST http://$GREENHOUSE_WATERING_SYSTEM_IP/relay -d 'relayActivation=true’ 
+```
+
+- Disable the pump
+
+```bash
+curl -vvv -X POST http://$GREENHOUSE_WATERING_SYSTEM_IP/relay -d 'relayActivation=false’
+```
+
 ## Hardware
 
 ### Board: LC-relais-ESP12-1R-D8
