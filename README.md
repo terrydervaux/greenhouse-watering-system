@@ -44,6 +44,26 @@ curl -X POST http://$GREENHOUSE_WATERING_SYSTEM_IP/relay -d 'relayActivation=tru
 curl -vvv -X POST http://$GREENHOUSE_WATERING_SYSTEM_IP/relay -d 'relayActivation=false’
 ```
 
+## How to control the watering system from HomeAssistant
+
+- Add the watering system into your `configuration.yaml`
+
+```yaml
+switch:
+  - platform: command_line
+    switches:
+      relay_switch:
+        command_on: 'curl -X POST http://$GREENHOUSE_WATERING_SYSTEM_IP/relay -d relayActivation=true'
+        command_off: 'curl -X POST http://$GREENHOUSE_WATERING_SYSTEM_IP/relay -d relayActivation=false'
+        command_state: 'curl -X GET http://$GREENHOUSE_WATERING_SYSTEM_IP/relay'
+        value_template: '{{ value == "{relayActivation=true}" }}'
+        friendly_name: Watering System
+```
+
+- Replace `$GREENHOUSE_WATERING_SYSTEM_IP` by your watering system IP that can be
+  found on your internet router
+- Restart HomeAssistant
+
 ## Hardware
 
 ### Board: LC-relais-ESP12-1R-D8
